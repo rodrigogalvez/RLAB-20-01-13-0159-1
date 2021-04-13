@@ -1,9 +1,10 @@
 <template>
-  <div>
-    <h2>{{ titulo }}</h2> 
-    <p>Estado: {{ cuenta }}</p>
-    <button @click="incrementar">Incrementar</button>
-  </div>
+  <b-card header="Contador" :title="titulo">
+    <b-card-text>Estado: <b-badge variant="info">{{ cuenta }}</b-badge></b-card-text>
+    <b-button variant="primary" @click="incrementar"
+      >Incrementar</b-button
+    >
+  </b-card>
 </template>
 
 <script>
@@ -18,8 +19,8 @@ export default {
   methods: {
     incrementar() {
       this.cuenta++;
-      this.$emit("incrementado",this.titulo,this.cuenta);
-    }
-  }
+      this.$emit("incrementado", this.titulo, this.cuenta);
+    },
+  },
 };
 </script>

@@ -1,20 +1,24 @@
 <template>
   <div id="app">
-    <h1>Cuenta de bichos en la casa</h1>
-    <contador
-      v-for="contador of contadores"
-      :key="contador.titulo"
-      :titulo="contador.titulo"
-      @incrementado="contadorActualizado"
-    ></contador>
-    <h1>Resumen:</h1>
-    <p>Total de bichos: {{ totalBichos }}</p>
-    <h2>Bichos por tipo</h2>
-    <ul>
-      <li v-for="contador of contadores" :key="contador.titulo">
-        {{ contador.titulo }} = {{ contador.cuenta }}
-      </li>
-    </ul>
+    <b-container>
+      <h1>Cuenta de bichos en la casa</h1>
+      <b-card-group deck>
+        <contador
+          v-for="contador of contadores"
+          :key="contador.titulo"
+          :titulo="contador.titulo"
+          @incrementado="contadorActualizado"
+        ></contador>
+      </b-card-group>
+      <h1>Resumen:</h1>
+      <p>Total de bichos: {{ totalBichos }}</p>
+      <h2>Bichos por tipo</h2>
+      <ul>
+        <li v-for="contador of contadores" :key="contador.titulo">
+          {{ contador.titulo }} = {{ contador.cuenta }}
+        </li>
+      </ul>
+    </b-container>
   </div>
 </template>
 
@@ -69,12 +73,12 @@ export default {
 </script>
 
 <style>
-#app {
+/* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
+  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
+} */
 </style>
