@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="misitio.cl" method="get" onsubmit="return validar()">
+        <input type="text" placeholder="Tu nombre*" id="nom" required maxlength="30">
+        <input type="email" placeholder="Email*" id="email" required>
+        <input type="text" placeholder="Telefono*" id="telefono" maxlength="12" required>
+        <textarea id="mensaje" cols="30" rows="10" placeholder="Tu mensaje*" required>
+        </textarea>
+        <input type="submit" id="enviar" value="Enviar">
+    </form>
+    <p id="verificacion"></p>
+    <script src="formulario.js"></script>
+</body>
+</html>

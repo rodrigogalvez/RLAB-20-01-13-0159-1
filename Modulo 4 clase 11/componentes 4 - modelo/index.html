@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Presentar semáforos desde un listado llamado semaforos -->
+        <!-- Notar que ahora SI funciona el v-model -->
+        <semaforo 
+            v-for="semaforo in semaforos" 
+            :titulo="semaforo.titulo"
+            :rojo="semaforo.rojo"
+            :amarillo="semaforo.amarillo"
+            :verde="semaforo.verde"
+            v-model="semaforo.color"></semaforo>
+        <hr>
+        <h1>Estado de los semáforos</h1>
+        <ol>
+            <li v-for="semaforo in semaforos">{{semaforo.titulo}} - {{semaforo.color}}</li>
+        </ol>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>

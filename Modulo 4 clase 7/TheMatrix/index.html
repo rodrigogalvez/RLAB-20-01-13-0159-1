@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div v-if="!wearein">
+            <form @submit.prevent="verificar">
+                <label>Nombre</label><input type="text" v-model="nombre" autocomplete="off">
+                <label>Contraseña</label><input type="password" v-model="contrasena" autocomplete="off" @input="borrarError">
+                <button>Entrar</button>
+            </form>
+            <div v-if="nombre==''">El nombre no puede estar vacío</div>
+            <div v-if="nombre.includes(' ')">El nombre no puede tener espacios</div>
+            <div v-if="contrasena==''">La clave no puede estar vacía</div>
+            <div v-if="contrasenaincorrecta">Clave incorrecta</div>
+        </div>
+        <div v-else class="wearein">
+            WE ARE IN
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

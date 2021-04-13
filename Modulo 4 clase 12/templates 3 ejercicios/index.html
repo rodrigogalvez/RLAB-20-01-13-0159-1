@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <template id="pingponginterno">
+        <div class="pingponginterno">
+            <div class="panel"><button v-if="elegido==1" @click="mostrarOtro()">Mostrar otro</button></div>
+            <div class="panel"><button v-if="elegido==2" @click="mostrarOtro()">Mostrar otro</button></div>
+        </div>
+    </template>
+
+    <template id="saltador">
+        <div class="saltador" :style="{top: y+'px', left: x+'px'}">
+            <h1>Saldator</h1>
+            <button @click="cambiar()">Saltar</button>
+        </div>
+    </template>
+
+    <div id="app">
+        <pingponginterno></pingponginterno>
+        <saltador></saltador>
+        <pingponginterno></pingponginterno>
+        <saltador></saltador>
+        <pingponginterno></pingponginterno>
+        <saltador></saltador>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <img :src="logo" alt="" srcset="" height="200px">
+        <h1>{{saludo}}</h1>
+
+        <hr>
+        <input type="text" v-model="saludo">
+        <hr>
+        <template v-for="foto in fotos">
+            <label><input type="radio" v-model="fotoelegida" :value="foto">{{foto.titulo}}</label>
+        </template>
+        <hr>
+        <template v-if="fotoelegida">
+            <h1>Foto elegida</h1>
+            <img :src="fotoelegida.url" height="32px">
+            <p>{{fotoelegida.titulo}}</p>
+        </template>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <label><input type="radio" v-model="color" value="rojo">Rojo</label><br>
+        <label><input type="radio" v-model="color" value="amarillo">Amarillo</label><br>
+        <label><input type="radio" v-model="color" value="verde">Verde</label><br>
+        <hr>
+        <p>Cambio color con clase:
+            <span :class="{colorrojo: color=='rojo', coloramarillo: color=='amarillo', colorverde: color=='verde'}">{{saludo}}</span>
+        </p>
+        <p>Cambio color con estilo:
+            <span :style="{color: colorconvertido}">{{saludo}}</span>
+        </p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>

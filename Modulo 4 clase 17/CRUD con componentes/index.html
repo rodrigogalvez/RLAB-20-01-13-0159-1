@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible"
+            content="IE=edge">
+      <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+            crossorigin="anonymous">
+      <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+      <link rel="stylesheet"
+            href="index.css">
+      <title>Repaso VueJS</title>
+</head>
+
+<body>
+
+      <div id="app">
+            <div class="container">
+                  <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                              <div class="nav-link"
+                                   :class="{active: modo==3}">Inicio</div>
+                        </li>
+                        <li class="nav-item">
+                              <div class="nav-link"
+                                   :class="{active: modo==0}">Listado</div>
+                        </li>
+                        <li class="nav-item">
+                              <div class="nav-link"
+                                   :class="{active: modo==1}">Edición</div>
+                        </li>
+                        <li class="nav-item">
+                              <div class="nav-link"
+                                   :class="{active: modo==2}">Eliminación</div>
+                        </li>
+                  </ul>
+                  <div class="jumbotron border border-top-0 rounded-bottom p-1" v-if="modo==3">
+                        <h1 class="display-4">Listado de alumnos</h1>
+                        <p class="lead">Este es un ejemplo de edición de arreglos tipo CRUD.</p>
+                        <hr class="my-4">
+                        <p>Desarrollado con VueJS.</p>
+                        <button class="btn btn-primary" @click="modoVisualizacion">Iniciar</button>
+                  </div>
+                  <lista-alumnos v-if="modo==0"
+                                 :alumnos="alumnos"
+                                 @agregar="modoAgregar"
+                                 @editar="modoEdicion"
+                                 @eliminar="modoEliminacion"></lista-alumnos>
+                  <formulario-alumno v-if="modo==1"
+                                     :alumnos="alumnos"
+                                     :indice="indice"
+                                     @terminado="modoVisualizacion"></formulario-alumno>
+                  <eliminar-alumno v-if="modo==2"
+                                   :alumnos="alumnos"
+                                   :indice="indice"
+                                   @terminado="modoVisualizacion"></eliminar-alumno>
+            </div>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      <script src="index.js"></script>
+</body>
+
+</html>

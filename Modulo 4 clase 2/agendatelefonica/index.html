@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Agenda telefónica</h1>
+    <p>Ingersar varios contactos con nombre y telefono a un contenedor y permitir buscar por nombre parcial.</p>
+    <hr>
+    <form action="" onsubmit="return false">
+        <label>Nombre</label>
+        <input type="text" id="nombre" autocomplete="off"><br>
+        <label>Teléfono</label>
+        <input type="tel" id="telefono" autocomplete="off"><br>
+        <button type="submit" onclick="agregarClick()">Agregar</button>
+    </form>
+    <p id="errores"></p>
+    <hr>
+    <form action="" onsubmit="return false">
+        <label>Nombre parcial</label>
+        <input type="text" id="busquedanombre" autocomplete="off"><br>
+        <button type="button" onclick="buscarNombreClick()">Buscar contactos</button>
+    </form>
+    <hr>
+    <form action="" onsubmit="return false">
+        <label>Teléfono parcial</label>
+        <input type="text" id="busquedatelefono" autocomplete="off"><br>
+        <button type="button" onclick="buscarTelefonoClick()">Buscar contactos</button>
+    </form>
+    <hr>
+    <button type="button" onclick="mostrarClick()">Mostrar contactos</button>
+    <div id="contactos"></div>
+
+    <script src="index.js"></script>
+</body>
+</html>

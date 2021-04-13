@@ -1,0 +1,41 @@
+.componentesemaforo {
+    display: inline-block;
+}
+
+.panel {
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 24px;
+    vertical-align: top;
+    padding: 8px;
+    height: 96px;
+}
+
+.semaforo {
+    border: 1px solid lightgray;
+    border-radius: 24px;
+    background-color: black;
+    /* width: 48px; */
+    padding: 8px;
+    display: inline-block;
+}
+
+.semaforo > div {
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;    border: 1px solid lightgray;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.colorrojo {
+    background-color: red;
+}
+
+.coloramarillo {
+    background-color: yellow;
+}
+
+.colorverde {
+    background-color: green;
+}

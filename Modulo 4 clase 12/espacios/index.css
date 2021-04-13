@@ -1,0 +1,23 @@
+.contenedor2 {
+    font-size: 0;
+}
+
+.contenedor2 > * {
+    font-size: initial;
+    background-color: blueviolet;
+}
+
+.contenedor {
+    width: 200px;
+    border: 4px solid blue;
+    box-sizing: content-box;
+    font-size: 0;
+}
+
+.columna {
+    border: 4px solid red;
+    box-sizing: border-box;
+    width: 50%;
+    display: inline-block;
+    font-size: initial;
+}

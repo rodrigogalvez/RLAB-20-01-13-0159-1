@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <form @submit.prevent="">
+            <label>Nombre:</label><input type="text" v-model="nuevoNombre" ref="primeraEntrada"><br>
+            <label>Precio:</label><input type="number" v-model.number="nuevoPrecio"><br>
+            <button @click="agregar">Grabar</button>
+        </form>
+        <h1>Listado de productos</h1>
+        <template v-for="producto in productos">
+            <p>{{producto.nombre}} - {{producto.precio}}</p>
+        </template>
+
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

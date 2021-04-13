@@ -1,0 +1,25 @@
+.semaforo {
+    border: 1px solid lightgray;
+    border-radius: 24px;
+    background-color: black;
+    width: 48px;
+    padding: 8px;
+}
+
+.semaforo > div {
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;    border: 1px solid lightgray;
+}
+
+.colorrojo {
+    background-color: red;
+}
+
+.coloramarillo {
+    background-color: yellow;
+}
+
+.colorverde {
+    background-color: green;
+}

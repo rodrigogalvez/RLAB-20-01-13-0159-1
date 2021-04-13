@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form onsubmit="return enviarformulario()">
+        <!-- El input text, reacciona al ENTER y ejecuta el evento del botón tipo submit y del formulario. -->
+        <input type="text" id="texto">
+        <!-- El botón Enviar es tipo Submit, por lo tanto ejecuta el click y el submit del formulario. También reaccciona al ENTER. -->
+        <button type="submit" onclick="botonenviarclick()">Enviar</button>
+        <!-- El botón Otro es de tipo button y no envía el formulario. Es decir, no ejecuta el submit, solo su evento con el click. Tampoco reacciona al ENTER. -->
+        <button type="button" onclick="otrobotonclick()">Otro</button>
+    </form>
+    <hr>
+    <!-- El input text fuera del formulario, no reacciona al ENTER. -->
+    <input type="text" id="texto2">
+    <!-- Los botones tipo submit tienen sentido solo dentro de un formulario. Fuera de este, reaccionan igual que los tipo button. -->
+    <button type="submit" onclick="botonenviarclick()">Enviar</button>
+    <button type="button" onclick="otrobotonclick()">Otro</button>
+
+    <script src="index.js"></script>
+</body>
+</html>

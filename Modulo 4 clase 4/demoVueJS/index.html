@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <label>Ingrese ancho de la foto: </label>
+        <input type="text" v-model="imgwidth"><br>
+        <label>Ingrese alto de la foto: </label>
+        <input type="text" v-model="imgheight"><br>
+        <label>Indique dirección de la foto: </label>
+        <input type="text" v-model="imgurl"><br>
+        <hr>
+        <div v-if="imgurl != ''">
+            <img :src="imgurl" :alt="imgurl" :width="imgwidth" :height="imgheight">
+        </div>
+        <div v-else>
+            No hay imagen que mostrar
+        </div>
+
+        <ol>
+            <li v-for="nombreimagen of listaimagenes">Imagen: {{nombreimagen}}</li>
+        </ol>
+
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="index.js"></script>
+
+</html>

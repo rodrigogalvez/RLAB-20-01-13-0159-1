@@ -1,0 +1,61 @@
+.boton {
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  outline: none;
+  /* background-color: aqua; */
+  border: none;
+  color: whitesmoke;
+  box-shadow: 0rem 0rem 0.5rem 0rem rgba(0, 128, 160, 0.75);
+  background: rgba(147, 206, 222, 1);
+  background: linear-gradient(
+    135deg,
+    rgba(147, 206, 222, 1) 0%,
+    rgba(147, 206, 222, 1) 12%,
+    rgba(117, 189, 209, 1) 43%,
+    rgba(73, 165, 191, 1) 77%,
+    rgba(73, 165, 191, 1) 100%
+  );
+}
+
+.boton:active {
+  box-shadow: 0rem 0rem 0.5rem 0rem rgba(0, 128, 160, 0.95);
+}
+
+.numero {
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  outline: none;
+  /* background-color: brown; */
+  color: whitesmoke;
+  text-align: center;
+  /* list-style-type: none; */
+  line-height: 2rem;
+  display: inline-block;
+  margin: 0.5rem;
+  box-shadow: 0rem 0rem 0.5rem 0rem rgba(0, 128, 160, 0.75);
+  background: rgba(239, 197, 202, 1);
+  background: linear-gradient(
+    135deg,
+    rgba(239, 197, 202, 1) 0%,
+    rgba(210, 75, 90, 1) 32%,
+    rgba(186, 39, 55, 1) 86%,
+    rgba(241, 142, 153, 1) 100%
+  );
+}
+
+.numero:last-child {
+  /* background-color: goldenrod; */
+  background: rgba(255, 175, 75, 1);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 175, 75, 1) 0%,
+    rgba(255, 146, 10, 1) 74%,
+    rgba(255, 146, 10, 1) 100%
+  );
+}
+
+.numero:hover {
+  box-shadow: 0rem 0rem 0.5rem 0rem rgba(0, 128, 160, 0.95);
+}

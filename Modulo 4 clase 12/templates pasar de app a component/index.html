@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <template id="pingponginterno">
+        <div class="pingponginterno">
+            <h1>{{titulo}}</h1>
+            <div class="panel">
+                <button v-if="elegido==1" @click="mostrarOtro()">Mostrar otro</button>
+            </div>
+            <div class="panel">
+                <button v-if="elegido==2" @click="mostrarOtro()">Mostrar otro</button>
+            </div>
+        </div>
+    </template>
+
+    <div id="app">
+        <pingponginterno titulo="ejemplo 1"></pingponginterno>
+        <pingponginterno titulo="ejemplo 2"></pingponginterno>
+        <pingponginterno titulo="ejemplo 3"></pingponginterno>
+        <pingponginterno titulo="ejemplo 4"></pingponginterno>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+          href="index.css">
+    <title>Repaso VueJS</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <div class="container">
+            <h1>Listado de alumnos</h1>
+            <form @submit.prevent>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text"><i class="bi bi-search"></i></label>
+                        </div>
+                        <input type="search"
+                               v-model="filtro"
+                               class="form-control">
+                    </div>
+                </div>
+            </form>
+            <div class="card overflow-auto"
+                 style="height: 30vh;">
+                <div class="card-header sticky-top bg-light">
+                    Listado de alumnos
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"
+                        v-for="(elemento, indice) of lista"
+                        v-if="(elemento.nombre+elemento.apellido).toUpperCase().includes(filtro.toUpperCase())">
+                        {{indice}} - {{elemento.nombre}} {{elemento.apellido}} ({{elemento.tipo}})
+                        <div class="btn-group float-right"
+                             role="group">
+                            <button @click="editar(indice)"
+                                    class="btn btn-warning"><i class="bi bi-person-bounding-box"></i></button>
+                            <button @click="eliminar(indice)"
+                                    class="btn btn-danger"><i class="bi bi-person-x-fill"></i></button>
+                        </div>
+                    </li>
+                </ul>
+                <div class="card-footer sticky-bottom bg-light">
+                    Fin de listado de alumnos
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-12 bg-light font-weight-bold"><h1>Listado de alumnos</h1></div>
+        </div>
+        <div class="row border">
+            <div class="col-2"><h2>índice</h2></div>
+            <div class="col-8"><h2>Nombre y apellido</h2></div>
+            <div class="col-2"><h2>Acciones</h2></div>
+        </div>
+        <div class="row border"
+             v-for="(elemento, indice) of lista"
+             v-if="(elemento.nombre+elemento.apellido).toUpperCase().includes(filtro.toUpperCase())">
+            <div class="col-2 my-auto">{{indice}}</div>
+            <div class="col-8 my-auto">{{elemento.nombre}} {{elemento.apellido}}</div>
+            <div class="col-2 my-auto">
+                <button @click="editar(indice)"
+                        class="btn btn-warning">Editar</button>
+                <button @click="eliminar(indice)"
+                        class="btn btn-danger">Eliminar</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">Fin de listado de alumnos</div>
+        </div> -->
+        <div class="container">
+            <h1>Formulario de edición</h1>
+            <div class="alert alert-info"
+                 role="alert">
+                Modo de operación: {{modoOperacion}}
+                <span v-if="indiceedicion!=-1"> editando al: {{indiceedicion}}</span>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-8 col-lg-8 col-xl-8">
+                    <form @submit.prevent="">
+                        <div class="form-group">
+                            <label>Nombre:</label>
+                            <input type="text"
+                                   v-model="nuevonombre"
+                                   class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Apellido:</label>
+                            <input type="text"
+                                   v-model="nuevoapellido"
+                                   class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Tipo:</label>
+                            <select class="custom-select"
+                                    v-model="nuevotipo">
+                                <option value=""
+                                        selected>Elija tipo de alumno</option>
+                                <option value="Presencial">Presencial</option>
+                                <option value="Online">Online</option>
+                                <option value="Libre">Libre</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                    <h2>Errores en el formulario</h2>
+                    <div class="alert alert-success"
+                         v-if="errores.length==0">
+                        El estudiante se puede grabar
+                    </div>
+                    <div class="alert alert-danger"
+                         role="alert"
+                         v-for="e in errores">
+                        {{e}}
+                    </div>
+                </div>
+            </div>
+            <div class="btn-group float-right"
+                 role="group">
+                <button v-if="indiceedicion==-1"
+                        @click="agregar"
+                        :disabled="errores.length>0"
+                        class="btn btn-primary"><i class="bi bi-person-plus-fill"></i></button>
+                <button v-else
+                        @click="guardar"
+                        :disabled="errores.length>0"
+                        class="btn btn-primary"><i class="bi bi-person-check-fill"></i></button>
+                <button @click="limpiar"
+                        class="btn btn-secondary"><i class="bi bi-x-square-fill"></i></button>
+            </div>
+
+        </div>
+        <br>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

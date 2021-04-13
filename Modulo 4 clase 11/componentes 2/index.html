@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- El componente semaforo me simplifica el código. -->
+        <semaforo titulo="Peligro de incendio" rojo="Alto" amarillo="Regular" verde="Normal"></semaforo>
+        <h1> Hola mundo</h1>
+        <!-- Solo cambian los atributos de configuración (titulo, rojo, amarillo, verde) -->
+        <semaforo titulo="Temperatura" rojo="Más 45°(c)" amarillo="Más de 30°(c)" verde="Menos de 30°(c)"></semaforo>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>

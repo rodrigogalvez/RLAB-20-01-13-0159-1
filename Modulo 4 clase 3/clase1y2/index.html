@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    b {
+        color: red;
+    }
+    .colordestacado {
+        background-color: salmon;
+    }
+    .coloradvertencia {
+        background-color: yellow;
+    }
+</style>
+<body>
+    <div id="app">
+        <h1>{{saludo}}</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. {{saludo}}. Placeat earum totam, laborum itaque omnis dolorem dignissimos? Beatae inventore maiores eaque illum quidem, odit molestias veritatis tempore iste molestiae nulla totam.</p>  
+    </div>
+
+    <div id="app2">
+        <h4>Ayer me levanté un tanto <b>{{emocion1}}</b> por lo que decidí ir al parque. Al cerrar los ojos y escuchar los pajaritos me inundó una sensación extraña transformó mi estado interior. Sin saber cómo, empecé a sentirme <b>{{emocion2}}</b>, sé como explicarlo, pero al mismo tiempo me sentí un poco <b>{{emocion3}}</b> de la vida, lo que verdaderamente me hizo sentir <b>{{emocion4}}</b> era que por primera vez era capaz de sentir o al menos era primera vez que me daba cuenta.
+        </h4>
+    </div>
+
+    <div id="app3">
+        <h4 v-bind:style="estilocompleto" v-bind:class="{ colordestacado:estaDestacado, coloradvertencia:advertenciaActivada }">Ayer me levanté un tanto <b>{{emocion1}}</b> por lo que decidí ir al parque. Al cerrar los ojos y escuchar los pajaritos me inundó una sensación extraña transformó mi estado interior. Sin saber cómo, empecé a sentirme <b>{{emocion2}}</b>, sé como explicarlo, pero al mismo tiempo me sentí un poco <b>{{emocion3}}</b> de la vida, lo que verdaderamente me hizo sentir <b>{{emocion4}}</b> era que por primera vez era capaz de sentir o al menos era primera vez que me daba cuenta.
+        </h4>
+        <img v-bind:src="urlimagen" alt="" srcset="">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

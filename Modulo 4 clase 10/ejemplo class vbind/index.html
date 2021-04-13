@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <table>
+            <tr>
+                <td>Código</td>
+                <td>Descripción</td>
+                <td>Precio</td>
+                <td>Stock</td>
+            </tr>
+            <template v-for="articulo in articulos">
+                <tr class="normal" v-bind:class="{ faltastock: articulo.stock===0 }">
+                    <td>{{articulo.codigo}}</td>
+                    <td>{{articulo.descripcion}}</td>
+                    <td>{{articulo.precio}}</td>
+                    <td>{{articulo.stock}}</td>
+                </tr>
+            </template>
+        </table>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

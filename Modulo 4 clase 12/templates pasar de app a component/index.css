@@ -1,0 +1,28 @@
+.pingponginterno {
+  display: inline-block;
+  /* width: 100px; */
+  box-sizing: content-box;
+  border: 4px solid violet;
+  padding: 8px;
+  width: 200px;
+  font-size: 0;
+}
+
+h1 {
+  font-size: initial;
+}
+
+.panel {
+  width: 50%;
+  display: inline-block;
+  border: 1px solid black;
+  box-sizing: border-box;
+  height: 32px;
+  vertical-align: top;
+  /* padding: 8px; */
+}
+
+.panel > button {
+  width: 100%;
+  height: 100%;
+}

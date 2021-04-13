@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <label>Tamaño fuente</label>
+        <input type="range" v-model="tamanofuente" min=10 max=100>{{tamanofuente}}
+        <br>
+        <label>Color</label>
+        <input type="color" v-model="colorparrafo">{{colorparrafo}}
+        <br>
+        <hr>
+        <p>Ejemplo</p>
+        <p :style="{'font-size':tamanofuente+'px','color':colorparrafo}">Hola Mundo</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

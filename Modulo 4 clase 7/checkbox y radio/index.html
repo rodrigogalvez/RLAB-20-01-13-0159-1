@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Prueba Checkbox y radio</h1>
+        <h2>Prueba radio</h2>
+        <label>Alternativa 1<input type="radio" v-model="opcionSimple" value="A"></label>
+        <label>Alternativa 2<input type="radio" v-model="opcionSimple" value="B"></label>
+        <label>Alternativa 3<input type="radio" v-model="opcionSimple" value="C"></label>
+        <label>Alternativa 4<input type="radio" v-model="opcionSimple" value="D"></label>
+        <p>Opción Simple: {{opcionSimple}}</p>
+        <h2>Prueba radio 2</h2>
+        <label>Alternativa 1<input type="radio" v-model="opcionSimple2" value="A"></label>
+        <label>Alternativa 2<input type="radio" v-model="opcionSimple2" value="B"></label>
+        <label>Alternativa 3<input type="radio" v-model="opcionSimple2" value="C"></label>
+        <label>Alternativa 4<input type="radio" v-model="opcionSimple2" value="D"></label>
+        <p>Opción Simple: {{opcionSimple2}}</p>
+        <h2>Prueba checkbox</h2>
+        <label>Check 1</label><input type="checkbox" v-model="opcionMultiple1" true-value="A" false-value="NO es A">
+        <label>Check 2</label><input type="checkbox" v-model="opcionMultiple2" true-value="B">
+        <label>Check 3</label><input type="checkbox" v-model="opcionMultiple3">
+        <label>Check 4</label><input type="checkbox" v-model="opcionMultiple4" true-value="D">
+        <p>Opción Multiple: {{opcionMultiple1}}</p>
+        <p>Opción Multiple: {{opcionMultiple2}}</p>
+        <p>Opción Multiple: {{opcionMultiple3}}</p>
+        <p>Opción Multiple: {{opcionMultiple4}}</p>
+
+        <button @click="test($event)" @keydown="test">test($event)</button>
+        <button @click="test">test</button>
+        <button @click="test('HOLA')">test('HOLA')</button>
+        <button @click="test('HOLA',$event)">test('HOLA',$event)</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso VueJS</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <div v-for="(elemento, indice) of lista">
+            Índice: {{indice}},
+            Nombre: {{elemento.nombre}}
+            Apellido: {{elemento.apellido}}
+            <button @click="editar(indice)">Editar</button>
+            <button @click="eliminar(indice)">Eliminar</button>
+        </div>
+        <p>Modo de operación: {{modoOperacion}}</p>
+        <p>Editando al: {{indiceedicion}}</p>
+        <form @submit.prevent="">
+            <label>Nombre:</label>
+            <input type="text" v-model="nuevonombre"><br>
+            <label>Apellido:</label>
+            <input type="text" v-model="nuevoapellido"><br>
+            <button v-if="indiceedicion==-1" @click="agregar">Agregar</button>
+            <button v-else @click="guardar">Guardar</button>
+        </form>
+        <p>Errores del formulario: {{errores}}</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

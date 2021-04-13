@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <form @submit="procesarSubmit">
+            <label>Número 1</label>
+            <input type="text" v-model.number="numero1">
+            <br>
+            <label>Número 2</label>
+            <input type="number" v-model="numero2">
+            <br>
+            <button @click="sumar">Sumar</button>
+        </form>
+        <hr>
+        <p>{{numero1}}</p>
+        <p>Resultado suma: {{resultado}}</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

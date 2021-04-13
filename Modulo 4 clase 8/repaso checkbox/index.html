@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <label><input type="checkbox" v-model="lenguajes" value="VueJS">VueJS</label><br>
+        <label><input type="checkbox" v-model="lenguajes" value="Angular">Angular</label><br>
+        <label><input type="checkbox" v-model="lenguajes" value="React">React</label><br>
+        <label><input type="checkbox" v-model="lenguajes" value="Bootstrap">Bootstrap</label><br>
+        <label><input type="checkbox" v-model="lenguajes" value="Laravel">Laravel</label><br>
+        <hr>
+        <label><input type="checkbox" v-model="especial1" true-value="COBOL" false-value="NO COBOL">COBOL</label><br>
+        <label><input type="checkbox" v-model="especial2" true-value="C++" false-value="No C++">C++</label><br>
+        <hr>
+        <ul>
+            <li v-for="lenguaje of lenguajes">{{lenguaje}}</li>
+        </ul>
+        <hr>
+        <p>{{especial1}} - {{especial2}}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

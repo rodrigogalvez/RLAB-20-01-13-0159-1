@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- No se olvide de cambair el idioma -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Listado de mascotas</h1>
+        <div v-for="animal of lista">
+            <p>Mascota: {{animal.nombre}}
+                ({{animal.edad}})</p>
+            <p>Especie: {{animal.especie}},
+                Sexo: {{animal.sexo}}</p>
+            <hr>
+        </div>
+        <div>Cantidad de mascotas: {{lista.length}}</div>
+        <form @submit.prevent="agregar">
+            <h1>Nueva mascota</h1>
+            <div>
+                <label>Especie</label>
+                <!-- <input type="text" v-model="nuevaespecie"> -->
+                <select v-model="nuevaespecie">
+                    <option value="Perro">Perro</option>
+                    <option value="Gato">Gato</option>
+                    <option value="Pájaro">Pájaro</option>
+                    <option value="Reptil">Reptil</option>
+                    <option value="Roedor">Roedor</option>
+                </select>
+            </div>
+            <div>
+                <label>Nombre</label>
+                <input type="text" v-model="nuevonombre">
+            </div>
+            <div>
+                <label>Edad</label>
+                <input type="number" v-model="nuevaedad">
+            </div>
+            <div>
+                <label>Sexo</label>
+                <!-- <input type="text" v-model="nuevosexo"> -->
+                <label>
+                    <input type="radio" v-model="nuevosexo" value="Macho">
+                    Macho
+                </label>
+                <label>
+                    <input type="radio" v-model="nuevosexo" value="Hembra">
+                    Hembra
+                </label>
+            </div>
+            <div><button>Agregar</button></div>
+        </form>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="repasovfor.js"></script>
+
+</html>

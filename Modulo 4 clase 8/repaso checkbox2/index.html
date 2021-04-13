@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <template v-for="lenguaje of lenguajes">
+            <label>
+                <input type="checkbox" v-model="seleccionados" :value="lenguaje">{{lenguaje.nombre}}<br>
+                <img :src="lenguaje.logo" height="30px"><br>
+            </label>
+        </template>
+        <hr>
+        <ul>
+            <li v-for="lenguaje of seleccionados">
+                {{lenguaje.nombre}} - {{lenguaje.descripcion}} 
+                <img :src="lenguaje.logo" height="16px">
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

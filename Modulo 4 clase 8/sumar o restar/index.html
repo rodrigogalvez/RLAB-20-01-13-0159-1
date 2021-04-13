@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <label>Número 1</label><input type="number" v-model.number="a"><br>
+        <label>Número 2</label><input type="number" v-model.number="b"><br>
+        <hr>
+        <label><input type="radio" v-model="operacion" value="sumar">Sumar</label><br>
+        <label><input type="radio" v-model="operacion" value="restar">Restar</label><br>
+        <hr>
+        <button @click="operar">Operar</button><br>
+        <button v-if="operacion=='sumar'" @click="sumar">Sumar</button>
+        <button v-if="operacion=='restar'" @click="restar">Restar</button>
+        <hr>
+        <button v-show="operacion=='sumar'" @click="sumar">Sumar</button>
+        <button v-show="operacion=='restar'" @click="restar">Restar</button>
+        <hr>
+        <p>Resultado: {{resultado}}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

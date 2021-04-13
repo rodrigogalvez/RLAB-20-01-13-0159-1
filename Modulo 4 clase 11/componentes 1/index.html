@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Primer semáforo -->
+        <div>
+            <h5>Peligro de incendio</h5>
+            <div class="panel">
+                <label><input type="radio" v-model="color" value="rojo">Alto</label><br>
+                <label><input type="radio" v-model="color" value="amarillo">Regular</label><br>
+                <label><input type="radio" v-model="color" value="verde">Normal</label><br>
+            </div>
+            <div class="semaforo">
+                <div :class="{colorrojo: color=='rojo'}"></div>
+                <div :class="{coloramarillo: color=='amarillo' }"></div>
+                <div :class="{colorverde: color=='verde'}"></div>
+            </div>
+        </div>
+        <!-- Segundo semáforo (no olvidar cambiar los nombres de las variables) -->
+        <div>
+            <h5>Temperatura ambiente</h5>
+            <div class="panel">
+                <label><input type="radio" v-model="color2" value="rojo">Más de 45°(c)</label><br>
+                <label><input type="radio" v-model="color2" value="amarillo">Más de 30°(c)</label><br>
+                <label><input type="radio" v-model="color2" value="verde">Bajo 30°(c)</label><br>
+            </div>
+            <div class="semaforo">
+                <div :class="{colorrojo: color2=='rojo'}"></div>
+                <div :class="{coloramarillo: color2=='amarillo' }"></div>
+                <div :class="{colorverde: color2=='verde'}"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
