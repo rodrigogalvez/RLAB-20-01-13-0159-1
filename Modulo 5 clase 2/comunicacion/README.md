@@ -1,5 +1,9 @@
 # comunicacion
 
+El código fuente ha sido evolutivo. Creamos primero el componente contador, lo usamos en el App.vue y luego agregamos eventos y métodos para informar a la App que el contador ha cambiado.
+
+Finalmente nos adelantamos a la clase 12, incorporando BootstrapVue. Recuerde siempre buscar en Internet la forma más actualizada de agregar BootstrapVue a su proyecto.
+
 ## Project setup
 ```
 npm install
