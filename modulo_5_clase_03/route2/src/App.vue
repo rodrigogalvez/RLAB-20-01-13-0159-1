@@ -6,7 +6,10 @@
       <router-link to="/productos">Productos</router-link> |
       <router-link to="/nosotros">Nosotros</router-link>
     </div>
+    <hr />
+    <p>Recordar poner encabezdo</p>
     <router-view />
+    <p>Recordar poner pie de pagina</p>
   </div>
 </template>
 
