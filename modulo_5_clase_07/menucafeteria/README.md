@@ -21,11 +21,11 @@ npm run build
 2) Ir a la ```consola``` de ```Firebase```
 3) Seleccionar ```Hosting```
 4) Click en ```comenzar```
-5) Instalar herramientas de ```Firebase``` (se hace una sola vez en la vida)
+5) Instalar herramientas de ```Firebase``` (**se hace una sola vez en la vida**)
 ```
 npm install -g firebase-tools
 ```
-1) Ingresar a ```Firebase``` con la herramienta:
+6) Ingresar a ```Firebase``` con la herramienta. La primera vez se abrirá una pantalla para elegir la cuenta de Google.
 ```
 firebase login --interactive
 ```
@@ -41,7 +41,38 @@ npm run build
 ```
 firebase deploy
 ```
+## Si va a volver a publicar
+1) Actualizar la carpeta ```dist/```
+```
+npm run build
+```
+2) Desplegar nuevamente
+```
+firebase deploy
+```
 
 ## Más información en
 Ver [publicar VueJS en Firebase](https://www.youtube.com/watch?v=UkkKbVRN548)
 Nota: el vídeo está desactualizado.
+
+## Problemas con las rutas
+Para que las rutas funcionen, debe configurar la sección ```rewrite``` en ```firebase.json```:
+```json
+{
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
+```
+Esta configuración hace que cualquier recurso pedido sea enviado al ```index.html```.
