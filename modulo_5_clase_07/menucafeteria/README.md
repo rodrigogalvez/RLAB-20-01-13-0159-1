@@ -11,32 +11,29 @@ npm install
 ```
 npm run serve
 ```
+## Publicar en Firebase
 
-## Preparar para publicar
-Esto crea la carpeta dist/
+1) Crear la que haber creado la carpeta ```dist/```
+con este comando:
 ```
 npm run build
 ```
-
-## Publicar en Firebase
-
-1) Tiene que haber creado la carpeta dist/
-2) Ir a la consola de Firebase
-3) Seleccionar Hosting
-4) Click en comenzar
-5) Instalar herramientas de Firebase (se hace una sola vez en la vida)
+2) Ir a la ```consola``` de ```Firebase```
+3) Seleccionar ```Hosting```
+4) Click en ```comenzar```
+5) Instalar herramientas de ```Firebase``` (se hace una sola vez en la vida)
 ```
 npm install -g firebase-tools
 ```
-6) Ingresar a Firebase con la herramienta:
+1) Ingresar a ```Firebase``` con la herramienta:
 ```
 firebase login --interactive
 ```
-7) Inicializar el Firebase, elegir Hosting con las flechas y la barra espaciadora. La carpeta publica por defecto es public, debe ser dist.
+7) Inicializar el ```Firebase```, elegir ```Hosting``` con las flechas y la barra espaciadora. La carpeta publica por defecto es ```public```, **debe ser ```dist/```**.
 ```
 firebase init
 ```
-9) Volver a generar la carpeta dist/
+9) Volver a generar la carpeta ```dist/```
 ```
 npm run build
 ```
