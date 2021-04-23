@@ -33,11 +33,11 @@ firebase login --interactive
 ```
 firebase init
 ```
-9) Volver a generar la carpeta ```dist/```
+8) Volver a generar la carpeta ```dist/```
 ```
 npm run build
 ```
-10) Finalmente desplegar
+9) Finalmente desplegar
 ```
 firebase deploy
 ```
