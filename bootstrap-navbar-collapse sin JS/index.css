@@ -1,0 +1,7 @@
+input[type="checkbox"][data-toggle="collapse"] {
+    appearance: none;
+}
+
+input[type="checkbox"][data-toggle="collapse"]:checked+.collapse {
+    display: block;
+}
