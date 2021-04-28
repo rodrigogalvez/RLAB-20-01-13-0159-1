@@ -1,0 +1,17 @@
+[
+    {
+        "codigo": 3,
+        "descripcion": "lápiz pasta",
+        "precio": 300
+    },
+    {
+        "codigo": 4,
+        "descripcion": "goma azul",
+        "precio": 500
+    },
+    {
+        "codigo": 5,
+        "descripcion": "regla de aluminio",
+        "precio": 700
+    }
+]
