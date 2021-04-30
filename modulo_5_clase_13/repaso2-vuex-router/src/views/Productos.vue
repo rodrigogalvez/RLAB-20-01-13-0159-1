@@ -1,7 +1,6 @@
 <template>
   <b-container>
     Aquí aparecerán los productos...
-    <!-- <div v-for="producto of $store.state.productos" :key="producto.codigo"> -->
     <div v-for="producto of productos" :key="producto.codigo">
       {{ producto.descripcion }}
       {{ producto.precio }}
@@ -9,47 +8,36 @@
         >Cambiar precio</b-button
       >
     </div>
-    <b-form @submit.prevent="ejecutarCambioPrecio"
-        v-if="codigoPrecio"
-    >
-      <b-form-group
-        label="Nuevo precio"
-        description="Nuevo precio del producto"
-      >
-        <b-form-input
-          v-model.number="nuevoPrecio"
-          type="number"
-          placeholder="Nuevo precio"
-        ></b-form-input>
-      </b-form-group>
-    </b-form>
   </b-container>
 </template>
 
 <script>
-import { mapState, mapMutations } from "vuex";
+import { mapState } from "vuex";
 
 export default {
-  data() {
-    return { nuevoPrecio: 0, codigoPrecio: 0 };
-  },
   computed: {
     ...mapState(["productos"]),
   },
   methods: {
-    ...mapMutations(["modificarPrecio"]),
     abrirFormularioPrecio(codigo, precio) {
-      this.codigoPrecio = codigo;
-      this.nuevoPrecio = precio;
-    },
-    ejecutarCambioPrecio() {
-      this.modificarPrecio({
-        codigo: this.codigoPrecio,
-        precio: this.nuevoPrecio,
+      // this.$router.push( { <-- esto funciona pero pasa los parámetros como TEXTO.
+      //   path: `/cambioprecio/${codigo}/${precio}`
+      // })
+      // this.$router.push({ 
+      //   path: `/cambioprecio`, <-- no funciona.
+      //   params: { <-- no puedes usar params+path
+      //     codigo: codigo,
+      //     precio: precio,
+      //   },
+      // });
+      this.$router.push({ // esto funciona y pasa los parámetros con el tipo de dato correcto. :)
+        name: `CambioPrecio`,
+        params: {
+          codigo: codigo,
+          precio: precio
+        },
       });
-      this.codigoPrecio = 0;
-      this.nuevoPrecio = 0;
-    }
+    },
   },
 };
 </script>

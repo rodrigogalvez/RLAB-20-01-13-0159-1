@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Productos from '../views/Productos.vue'
+import CambioPrecio from '../views/CambioPrecio.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/productos',
     name: 'Productos',
     component: Productos
+  },
+  {
+    path: '/cambioprecio/:codigo/:precio',
+    name: 'CambioPrecio',
+    component: CambioPrecio
   },
   {
     path: '/about',
