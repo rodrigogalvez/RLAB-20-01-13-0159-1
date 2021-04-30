@@ -16,7 +16,8 @@ export default new Vuex.Store({
         descripcion: "Zapatilla de lona",
         precio: 5000
       },
-    ]
+    ],
+    otracosa: ""
   },
   mutations: {
     // CRUD

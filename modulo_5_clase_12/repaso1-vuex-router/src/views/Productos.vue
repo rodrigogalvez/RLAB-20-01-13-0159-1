@@ -8,6 +8,7 @@
       <b-button @click="abrirFormularioPrecio(producto.codigo, producto.precio)"
         >Cambiar precio</b-button
       >
+      <b-button @click="cambioMula(producto)">Cambio mula</b-button>
     </div>
     <b-form @submit.prevent="ejecutarCambioPrecio"
         v-if="codigoPrecio"
@@ -49,6 +50,14 @@ export default {
       });
       this.codigoPrecio = 0;
       this.nuevoPrecio = 0;
+    },
+
+    cambioMula(producto) {
+        // producto.precio=555;
+           this.modificarPrecio({
+        codigo: producto.codigo,
+        precio: 555,
+      })
     }
   },
 };
